@@ -6,7 +6,7 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:15:49 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/20 20:29:01 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:06:58 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	*string;
 
 	string = 0;
@@ -32,4 +32,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 			ft_strlcpy(string, (char *)&s1[i], j - i + 1);
 	}
 	return (string);
-} 
+}

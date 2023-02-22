@@ -6,7 +6,7 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:06:22 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/16 16:10:46 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/21 23:14:32 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (s != NULL)
 	{
-		write(fd, &s[i], 1);
-		i++;
+		while (s[i] != '\0')
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
 	}
 }

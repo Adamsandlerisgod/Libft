@@ -6,7 +6,7 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:26:21 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/21 18:21:55 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:07:16 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	string[j] = '\0';
 	return (string);
 }
-		

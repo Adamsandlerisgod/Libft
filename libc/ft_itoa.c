@@ -6,7 +6,7 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:24:20 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/20 20:30:45 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:58:04 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ unsigned int	numbers(int n)
 	unsigned int	num;
 
 	num = 0;
-	while (n >= 1)
+	if (n <= 0)
+		num = 1;
+	while (n != 0)
 	{
 		n = n / 10;
 		num++;
@@ -37,6 +39,8 @@ char	*ft_itoa(int n)
 		return (NULL);
 	res[num] = '\0';
 	total = (long)n;
+	if (total == 0)
+		res[0] = '0';
 	if (total < 0)
 	{
 		res[0] = '-';
@@ -45,7 +49,7 @@ char	*ft_itoa(int n)
 	while (total > 0)
 	{
 		num--;
-		res[num] = total % 10 + '0';
+		res[num] = (total % 10) + '0';
 		total = total / 10;
 	}
 	return (res);

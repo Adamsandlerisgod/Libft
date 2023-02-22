@@ -6,7 +6,7 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:39:39 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/20 21:25:07 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:05:30 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (ptr == NULL)
 		return (NULL);
 	i = 0;
-	while (i != ft_strlen((char *)s))
+	while (s[i] != '\0')
 	{
-		ptr[i] = f(i, ptr[i]);
+		ptr[i] = f(i, s[i]);
 		i++;
 	}
 	ptr[i] = '\0';
-	return (ptr); 
+	return (ptr);
 }

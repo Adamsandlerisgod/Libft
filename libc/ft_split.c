@@ -6,46 +6,44 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 20:11:04 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/20 20:29:45 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:20:56 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(char const *s, char c)
+static size_t	count_strings(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	count;
 
 	i = 0;
 	count = 0;
+	if (!s)
+		return (count);
 	while (s[i] != '\0')
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i])
+		if (s[i] != c)
+		{
 			count++;
-		while (s[i] != c)
-			i++;
+			while (s[i] != '\0' && s[i] != c)
+				i++;
+			if (s[i] == '\0')
+				return (count);
+		}	
+		i++;
 	}
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**stringsorter(char **split, char c, size_t i, char const *s)
 {
-	unsigned int	i;
 	unsigned int	start;
 	unsigned int	end;
-	char			**split;
 
-	split = NULL;
-	if (!s || !c
-		|| split == (char **)malloc((count_words(s, c) + 1) * sizeof(char *)))
-		return (0);
 	start = 0;
 	end = 0;
-	i = 0;
-	while (i < count_words(s, c))
+	while (i < count_strings(s, c))
 	{
 		while (s[start] == c)
 			start++;
@@ -57,4 +55,18 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	return (split);
-}	
+}
+
+char	**ft_split(char const *s, char c)
+{
+	unsigned int	i;
+	char			**split;
+
+	split = (char **)malloc(sizeof(char *) * (count_strings(s, c) + 1));
+	if (!s || !c || !split)
+		return (0);
+	split[count_strings(s, c)] = 0;
+	i = 0;
+	stringsorter(split, c, i, s);
+	return (split);
+}
