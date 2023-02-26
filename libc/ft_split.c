@@ -6,7 +6,7 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 20:11:04 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/22 20:20:56 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/26 17:11:04 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static size_t	count_strings(char const *s, char c)
 	i = 0;
 	count = 0;
 	if (!s)
-		return (count);
+		return (0);
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
@@ -62,8 +62,10 @@ char	**ft_split(char const *s, char c)
 	unsigned int	i;
 	char			**split;
 
+	if (c == '\0' && !s)
+		return (0);
 	split = (char **)malloc(sizeof(char *) * (count_strings(s, c) + 1));
-	if (!s || !c || !split)
+	if (!split)
 		return (0);
 	split[count_strings(s, c)] = 0;
 	i = 0;

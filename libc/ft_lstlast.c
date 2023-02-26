@@ -6,7 +6,7 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 11:59:40 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/24 13:40:28 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/25 16:43:31 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,4 @@ t_list	*ft_lstlast(t_list *lst)
 	while (lst -> next)
 		lst = lst -> next;
 	return (lst);
-	
+}	

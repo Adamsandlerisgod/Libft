@@ -6,7 +6,7 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:19:39 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/24 13:50:46 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/26 12:50:51 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 	t_list	*node;
 
 	if (!new)
-		return (NULL);
-	node = *lst;
-	if (node)
+		return;
+	if (!*lst)
 	{
-		ft_lstlast(node);
-		node = new;
-	else
-		node = new;
+		*lst = new;
+		return;
+	}
+		node = ft_lstlast(*lst);
+		node->next = new;
 }
-
-	

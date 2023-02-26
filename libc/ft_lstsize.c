@@ -6,7 +6,7 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:18:25 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/23 19:21:45 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:00:28 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ int	ft_lstsize(t_list *lst)
 	i = 0;
 	if (lst == NULL)
 		return (0);
-	while (*lst++ != '\0')
+	while (lst)
+	{
+		lst = lst -> next;
 		i++;
+	}
 	return (i);
 }

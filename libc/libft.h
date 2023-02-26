@@ -6,7 +6,7 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:10:35 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/24 13:53:09 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/26 17:27:07 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size);
 unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size);
-int		ft_strlen(char *s);
-int		ft_strncmp(char *s1, char *s2, unsigned int n);
+int		ft_strlen(const char *s);
+int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
 char	*ft_strnstr(const char *haystack, const char *needle, unsigned int len);
-char	*ft_strrchr(char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);

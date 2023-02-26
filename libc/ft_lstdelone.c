@@ -6,14 +6,19 @@
 /*   By: whendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:20:59 by whendrik          #+#    #+#             */
-/*   Updated: 2023/02/24 15:45:48 by whendrik         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:04:35 by whendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+#include "libft.h"
+
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (!lst || !del)
-		return;
-	lst = del(lst -> content);
-	free(lst);
+		return ;
+	if (lst)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }

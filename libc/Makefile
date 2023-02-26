@@ -27,7 +27,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus:	$(OBJ_BONUS)
-	ar -r $?  
+	ar -r $(NAME) $? 
 
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)
